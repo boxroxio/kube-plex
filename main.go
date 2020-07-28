@@ -122,18 +122,18 @@ func generatePod(cwd string, env []string, args []string) *corev1.Pod {
 							Name:      "media-ssd",
 							MountPath: "/data",
 							ReadOnly:  true,
-							subPath: "library/"
+							subPath: "library/",
 						},
 						{
 							Name:      "media-ssd",
 							MountPath: "/config",
 							ReadOnly:  true,
-							subPath: "plex/config"
+							subPath: "plex/config",
 						},
 						{
 							Name:      "media-ssd",
 							MountPath: "/transcode",
-							subPath: "plex/transcode"
+							subPath: "plex/transcode",
 						},
 					},
 				},
