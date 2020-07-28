@@ -51,6 +51,8 @@ spec:
 {{- end }}
       containers:
       - name: plex
+        securityContext:
+          privileged: true
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
 {{- if .Values.kubePlex.enabled }}

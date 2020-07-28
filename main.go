@@ -119,25 +119,28 @@ func generatePod(cwd string, env []string, args []string) *corev1.Pod {
 					WorkingDir: cwd,
 					VolumeMounts: []corev1.VolumeMount{
 						{
-							Name:      "data",
+							Name:      "media-ssd",
 							MountPath: "/data",
 							ReadOnly:  true,
+							subPath: "library/"
 						},
 						{
-							Name:      "config",
+							Name:      "media-ssd",
 							MountPath: "/config",
 							ReadOnly:  true,
+							subPath: "plex/config"
 						},
 						{
-							Name:      "transcode",
+							Name:      "media-ssd",
 							MountPath: "/transcode",
+							subPath: "plex/transcode"
 						},
 					},
 				},
 			},
 			Volumes: []corev1.Volume{
 				{
-					Name: "data",
+					Name: "media-ssd",
 					VolumeSource: corev1.VolumeSource{
 						PersistentVolumeClaim: &corev1.PersistentVolumeClaimVolumeSource{
 							ClaimName: dataPVC,
@@ -145,7 +148,7 @@ func generatePod(cwd string, env []string, args []string) *corev1.Pod {
 					},
 				},
 				{
-					Name: "config",
+					Name: "media-ssd",
 					VolumeSource: corev1.VolumeSource{
 						PersistentVolumeClaim: &corev1.PersistentVolumeClaimVolumeSource{
 							ClaimName: configPVC,
@@ -153,7 +156,7 @@ func generatePod(cwd string, env []string, args []string) *corev1.Pod {
 					},
 				},
 				{
-					Name: "transcode",
+					Name: "media-ssd",
 					VolumeSource: corev1.VolumeSource{
 						PersistentVolumeClaim: &corev1.PersistentVolumeClaimVolumeSource{
 							ClaimName: transcodePVC,
