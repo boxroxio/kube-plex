@@ -14,9 +14,9 @@ install:
 script:
 - go test -cpu=2 -race -v -covermode=atomic $(go list ./... | grep -v /vendor/)
 
-# after_success:
-# - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o kube-plex github.com/munnerz/kube-plex
-# - docker build -t quay.io/munnerz/kube-plex:${TRAVIS_COMMIT:0:7} .
-# - docker tag -f quay.io/munnerz/kube-plex:${TRAVIS_COMMIT:0:7} "quay.io/munnerz/kube-plex:latest"
-# - docker push quay.io/munnerz/kube-plex:latest
-# - docker push quay.io/munnerz/kube-plex:${TRAVIS_COMMIT:0:7}
+after_success:
+ - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o kube-plex github.com/boxroxio/kube-plex
+ - docker build -t quay.io/tonykhbo/kube-plex:${TRAVIS_COMMIT:0:7} .
+ - docker tag -f quay.io/tonykhbo/kube-plex:${TRAVIS_COMMIT:0:7} "quay.io/tonykhbo/kube-plex:latest"
+ - docker push quay.io/tonykhbo/kube-plex:latest
+ - docker push quay.io/tonykhbo/kube-plex:${TRAVIS_COMMIT:0:7}
