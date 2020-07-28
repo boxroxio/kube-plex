@@ -147,22 +147,6 @@ func generatePod(cwd string, env []string, args []string) *corev1.Pod {
 						},
 					},
 				},
-				{
-					Name: "media-ssd",
-					VolumeSource: corev1.VolumeSource{
-						PersistentVolumeClaim: &corev1.PersistentVolumeClaimVolumeSource{
-							ClaimName: configPVC,
-						},
-					},
-				},
-				{
-					Name: "media-ssd",
-					VolumeSource: corev1.VolumeSource{
-						PersistentVolumeClaim: &corev1.PersistentVolumeClaimVolumeSource{
-							ClaimName: transcodePVC,
-						},
-					},
-				},
 			},
 		},
 	}
