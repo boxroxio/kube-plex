@@ -9,7 +9,7 @@ image:
 kubePlex:
   enabled: true
   image:
-    repository: quay.io/tonykhbo/custom-kube-plex
+    repository: quay.io/munnerz/kube-plex
     tag: latest
     pullPolicy: Always
 

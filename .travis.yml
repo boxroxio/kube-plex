@@ -16,7 +16,7 @@ script:
 
 after_success:
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin quay.io
- - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o kube-plex github.com/boxroxio/kube-plex
+ - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o kube-plex_linux_amd64 github.com/boxroxio/kube-plex
  - docker build -t quay.io/tonykhbo/custom-kube-plex:${TRAVIS_COMMIT:0:7} .
  - docker tag -f quay.io/tonykhbo/custom-kube-plex:${TRAVIS_COMMIT:0:7} "quay.io/tonykhbo/custom-kube-plex:latest"
  - docker push quay.io/tonykhbo/custom-kube-plex:latest
