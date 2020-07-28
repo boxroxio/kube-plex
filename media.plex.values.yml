@@ -1,4 +1,4 @@
-claimToken: claim-GT9_SKHdfCzXqP29YarD # Replace `<CLAIM_TOKEN>` by the token obtained previously.
+claimToken: claim-rcmf8NYdwS_JVGgzDKMx # Replace `<CLAIM_TOKEN>` by the token obtained previously.
 
 image:
   repository: linuxserver/plex
@@ -23,7 +23,7 @@ persistence:
   transcode:
     claimName: "media-ssd"
     subPath: plex/transcode
-    enabled: false
+    enabled: true
   data:
     claimName: "media-ssd"
     subPath: library/
