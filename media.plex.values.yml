@@ -1,4 +1,4 @@
-claimToken: claim-rcmf8NYdwS_JVGgzDKMx # Replace `<CLAIM_TOKEN>` by the token obtained previously.
+claimToken: claim-xbxkLGvmRsQhy5Rsyfsu # Replace `<CLAIM_TOKEN>` by the token obtained previously.
 
 image:
   repository: linuxserver/plex
