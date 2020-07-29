@@ -121,13 +121,11 @@ func generatePod(cwd string, env []string, args []string) *corev1.Pod {
 						{
 							Name:      "media-ssd",
 							MountPath: "/data",
-							ReadOnly:  true,
 							SubPath: "library/",
 						},
 						{
 							Name:      "media-ssd",
 							MountPath: "/config",
-							ReadOnly:  true,
 							SubPath: "plex/config",
 						},
 						{
